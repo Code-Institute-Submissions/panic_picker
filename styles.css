@@ -1,0 +1,83 @@
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+}
+
+body {
+  max-width: 100%;
+  background-color: #72a8ff;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 80%;
+  align-items: center;
+  text-align: center;
+}
+
+.text {
+  text-align: left;
+}
+
+.text h1 {
+  margin: 5% 0;
+}
+
+.text h3 {
+  margin: 5% 0;
+}
+
+.text p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.btn {
+  margin: 20px;
+  padding: 20px;
+  font-size: .9rem;
+  font-weight: bold;
+  background: #9f72ff;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  border-radius: 25px;
+  transition: all 0.4s ease;
+}
+
+.btn:active {
+  background: #72ffc9;
+}
+
+.output {
+  margin: 30px 30px;
+  text-align: left;
+}
+
+/* Javascript Components  */
+
+.heading h3 {
+  margin: 10px;
+}
+
+  
+#map-container {
+  height: 300px;
+  width: 300px;
+}
+
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+}
