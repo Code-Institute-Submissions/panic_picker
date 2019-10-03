@@ -8,93 +8,75 @@ const selection = [
   {food: "Indian", icon: "https://img.icons8.com/cotton/160/000000/chili-pepper--v2.png", output: "Spicy, rich and flavourful. What's not to like about Indian?"}
 ];
 
-const button =document.querySelector('.btn');
+
 const icon = document.querySelector('.icon');
 const output = document.querySelector('.output');
 const heading = document.querySelector('.heading');
+const input = document.querySelector('#pac-input');
 
 
-button.addEventListener('click',() => {  
-  const randomNumb = Math.floor((Math.random() * 6));
-  heading.innerHTML = `<h3> ${selection[randomNumb].food} </h3>`;
-  icon.innerHTML = `<img src=${selection[randomNumb].icon} alt=${selection[randomNumb].food}></img>`;  
-  output.innerHTML = `<p> ${selection[randomNumb].output} </p>`;
 
-  document.querySelector('#pac-input').value = selection[randomNumb].food;
-
-});
 
 
 let map; 
 function initMap() {
+  // Button
+  const button =document.querySelector('.btn');
+
+  // Map Init
   map = new google.maps.Map(document.querySelector('#map-container'), {
     center: {lat: 52.551972, lng: -5.505043},
     zoom: 11
   });
+  service = new google.maps.places.PlacesService(map);
 
-  const input = document.querySelector('#pac-input');
-  const searchBox = new google.maps.places.SearchBox(input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  let markers = [];
+  console.log(markers)
+  
+  
+  // Button Click Event
+  button.onclick = () => {
+    const numberforUse = Math.floor((Math.random() * 6));
+    // Define query for use in map search
+    const searchQuery = {query: selection[numberforUse].food, radius: 2000, location: map.getCenter()};
+    
+    // Update HTML
+    heading.innerHTML = `<h3> ${selection[numberforUse].food} </h3>`;
+    icon.innerHTML = `<img src=${selection[numberforUse].icon} alt=${selection[numberforUse].food}></img>`;  
+    output.innerHTML = `<p> ${selection[numberforUse].output} </p>`;
 
-  map.addListener('bounds_changed', function() {
-    searchBox.setBounds(map.getBounds());
-  });
+    // Clear Markers
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    });
 
+    // Perform maps search
+    service.textSearch(searchQuery, function(results, status) 
+    { if (status === google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < results.length; i++) 
+        {createMarker(results[i]);}
+         map.setCenter(results[0].geometry.location);
+        }
+      });   
+      }
 
-  var markers = [];
-        // Listen for the event fired when the user selects a prediction and retrieve
-        // more details for that place.
-        searchBox.addListener('places_changed', function() {
-          var places = searchBox.getPlaces();
-
-          if (places.length == 0) {
-            return;
-          }
-
-          // Clear out the old markers.
-          markers.forEach(function(marker) {
-            marker.setMap(null);
-          });
-          markers = [];
-
-          // For each place, get the icon, name and location.
-          var bounds = new google.maps.LatLngBounds();
-          places.forEach(function(place) {
-            if (!place.geometry) {
-              console.log("Returned place contains no geometry");
-              return;
-            }
-            var icon = {
-              url: place.icon,
-              size: new google.maps.Size(71, 71),
-              origin: new google.maps.Point(0, 0),
-              anchor: new google.maps.Point(17, 34),
-              scaledSize: new google.maps.Size(25, 25)
-            };
-
-            // Create a marker for each place.
-            markers.push(new google.maps.Marker({
-              map: map,
-              icon: icon,
-              title: place.name,
-              position: place.geometry.location
-            }));
-
-            if (place.geometry.viewport) {
-              // Only geocodes have viewport.
-              bounds.union(place.geometry.viewport);
-            } else {
-              bounds.extend(place.geometry.location);
-            }
-          });
-          map.fitBounds(bounds);
+      // Create Markers
+      function createMarker(place) {
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location,
+          title: place.name,
         });
+        markers.push(marker);
+      };
+
+      // Create InfoWindow
+      var infowindow = new google.maps.InfoWindow();
+      google.maps.InfoWindow.open(map, marker)
+  };
 
 
-
-
-
-
+// Request geolcation, set map center to location, handle geolocation errors
   function position(pos) {
     let location = {
       lat: pos.coords.latitude,
@@ -112,50 +94,4 @@ function initMap() {
   } else {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
-  }
-};
-
-
-
-
-
-
-
-
-
-// function getCurrentPosition() {
-
-//   function error(err) {
-//     console.warn(`Error using Geolocation.
-//   Code: ${err.code}, Message: ${err.message}`)
-//   }
-
-//   function success(pos){
-//     const latitude = pos.coords.latitude;
-//     const longitude = pos.coords.longitude;
-//     console.log(latitude)
-//   }
-
-
-//   if ("geolocation" in navigator) {
-//     /* geolocation is available */
-//     navigator.geolocation.getCurrentPosition(success, error);
-//   } else {
-//     /* geolocation IS NOT available */
-//   }
-
-// };
-
-  // Initiate Map
-
-
-
-
-
-
-
-
-
-
-    // return locationData
-
+  };

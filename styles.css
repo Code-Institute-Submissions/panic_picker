@@ -11,13 +11,13 @@ body {
 
 .wrap {
   margin: 0 auto;
-  max-width: 80%;
-  align-items: center;
+  width: 80%;
   text-align: center;
 }
 
 .text {
   text-align: left;
+  width: 100%;
 }
 
 .text h1 {
@@ -58,6 +58,10 @@ body {
   text-align: left;
 }
 
+.output > P {
+  text-align: center;
+}
+
 /* Javascript Components  */
 
 .heading h3 {
@@ -68,6 +72,7 @@ body {
 #map-container {
   height: 300px;
   width: 300px;
+  margin: 0 auto;
 }
 
 
@@ -80,4 +85,12 @@ body {
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
   width: 300px;
+}
+
+@media all and (min-width: 760px) {
+
+  #map-container {
+    height: 400px;
+    width: 400px;
+  }
 }
