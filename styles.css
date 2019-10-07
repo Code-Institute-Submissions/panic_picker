@@ -1,11 +1,14 @@
+/* Global Styles */
 
 * {
-  box-sizing: border-box;
   font-family: 'Roboto Mono', monospace;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  max-width: 100%;
   background-color: #72a8ff;
 }
 
@@ -15,32 +18,39 @@ body {
   text-align: center;
 }
 
+/* Main content Styles */
+
+.content-contain {
+  height: 95vh;
+}
+
 .text {
-  text-align: left;
   width: 100%;
 }
 
 .text h1 {
-  margin: 5% 0;
+  padding: 5% 0 2.5% 0;
 }
 
-.text h3 {
-  margin: 5% 0;
+.text h2 {
+  margin: 2.5% 0;
 }
 
 .text p {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 1em;
+  text-align: left;
+  margin: 15px auto;
 }
 
+/* Button Styles */
+
 .btn {
-  margin: 20px;
-  padding: 20px;
-  font-size: .9rem;
+  padding: 15px;
+  font-size: 1rem;
   font-weight: bold;
   background: #9f72ff;
   outline: none;
-  border: 1px solid black;
+  border: 1.5px solid black;
   border-radius: 5px;
 }
 
@@ -53,8 +63,19 @@ body {
   background: #72ffc9;
 }
 
+/* Javascript Added Components  */
+
+.container {
+  height: 325px;
+  padding: 10px 0;
+}
+
+.heading h3 {
+  margin: 10px;
+}
+
 .output {
-  margin: 30px 30px;
+  margin: 15px 30px;
   text-align: left;
 }
 
@@ -62,35 +83,187 @@ body {
   text-align: center;
 }
 
-/* Javascript Components  */
+/* Nav Arrow */
 
-.heading h3 {
-  margin: 10px;
+.arrow-contain {
+ height: 5vh;
+ display: block;
 }
 
-  
+.down-arrow {
+  position: relative;
+  top: -5px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+.down-arrow a:hover {
+  cursor: hover;
+}
+
+/* Map */
+
 #map-container {
+  display: inline-block;
   height: 300px;
   width: 300px;
   margin: 0 auto;
 }
 
-
-#pac-input {
-  background-color: #fff;
-  font-family: Roboto;
-  font-size: 15px;
-  font-weight: 300;
-  margin-left: 12px;
-  padding: 0 11px 0 13px;
-  text-overflow: ellipsis;
-  width: 300px;
-}
-
+/* Tablet */
 @media all and (min-width: 760px) {
 
-  #map-container {
-    height: 400px;
-    width: 400px;
+/* Main content Styles */
+
+.text h1 {
+  padding: 7.5% 0 5% 0;
+}
+
+.text h2 {
+  margin: 2.5% 0;
+}
+
+.text p {
+  font-size: 1.1em;
+  line-height: 35px;
+  text-align: left;
+  margin: 25px auto;
+  max-width: 90%;
+}
+
+/* Button Styles */
+
+.btn {
+  padding: 20px;
+  font-size: 1.15rem;
+  margin: 2.5% 0;
+}
+
+
+/* Javascript Added Components  */
+
+.container {
+  height: 325px;
+  padding: 10%;
+}
+
+.heading h3 {
+  margin: 15px;
+}
+
+.output {
+  margin: 30px 60px;
+  text-align: left;
+}
+
+.output > P {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Nav Arrow */
+
+.arrow-contain {
+ height: 5vh;
+ display: block;
+}
+
+.down-arrow {
+  position: relative;
+  top: -15px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+/* Map */
+
+#map-container {
+  height: 500px;
+  width: 500px;
+  margin-bottom: 10%;
   }
+}
+
+/* Desktop */
+@media all and (min-width: 992px) {
+
+.wrap {
+  width: 70%;
+}
+/* Main content Styles */
+
+.content-contain {
+  height: 55vh;
+}
+
+.text h1 {
+  padding: 5% 0 2.5% 0;
+}
+
+.text h2 {
+  margin: 0 0;
+}
+
+.text p {
+  font-size: 1.25em;
+  text-align: left;
+  margin: 30px 0;
+  line-height: 25px;
+  margin: 15px auto;
+}
+
+/* Javascript Added Components  */
+
+.container {
+  height: 325px;
+  padding: 10px 0;
+}
+
+.heading h3 {
+  margin: 10px;
+}
+
+.output {
+  margin: 20px 30px;
+  text-align: left;
+}
+/* Nav Arrow */
+
+.arrow-contain {
+ display: none;
+}
+
+/* Map */
+
+#map-container {
+  height: 500px;
+  width: 500px;
+  margin: 0 0 1% 0;
+}
+
+}
+
+@media all and (min-width: 1250px) {
+
+  .text h1 {
+    padding: 2.5% 0 2.5% 0;
+  }
+
+.content-contain {
+  height: 55vh;
+}
+
+.btn {
+  padding: 20px;
+  font-size: 1.15rem;
+  margin: 1% 0;
+}
+
+.text p {
+  max-width: 80%;
+  margin: 25px auto;
+}
+
 }

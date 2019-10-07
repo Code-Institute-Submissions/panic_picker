@@ -1,11 +1,11 @@
 
 const selection = [
-  {food: "Burger", icon: "https://img.icons8.com/plasticine/160/000000/hamburger.png", output: "You should grab yourself a burger!"},
-  {food: "Chicken", icon: "https://img.icons8.com/plasticine/160/000000/fried-chicken.png", output: "Treat yourself to some fried chicken"},
-  {food: "Mexican", icon: "https://img.icons8.com/plasticine/160/000000/taco.png", output: "Today calls for some tacos don't you think? Get some Mexican!"},
-  {food: "Pizza", icon: "https://img.icons8.com/doodle/160/000000/pizza.png", output: "You just got the answer you wanted. Get a pizza!"},
-  {food: "Ramen", icon: "https://img.icons8.com/officel/160/000000/noodles.png", output: "Street food style ramen, nothing better!"},
-  {food: "Indian", icon: "https://img.icons8.com/cotton/160/000000/chili-pepper--v2.png", output: "Spicy, rich and flavourful. What's not to like about Indian?"}
+  {food: "Burger", search: "burger take-away", icon: "https://img.icons8.com/plasticine/160/000000/hamburger.png", output: "You should grab yourself a burger!"},
+  {food: "Chicken", search: "fried chicken", icon: "https://img.icons8.com/plasticine/160/000000/fried-chicken.png", output: "Treat yourself to some fried chicken"},
+  {food: "Mexican", search: "mexican restaurant", icon: "https://img.icons8.com/plasticine/160/000000/taco.png", output: "Today calls for some tacos don't you think? Get some Mexican!"},
+  {food: "Pizza", search: "pizza place", icon: "https://img.icons8.com/doodle/160/000000/pizza.png", output: "You just got the answer you wanted. Get a pizza!"},
+  {food: "Ramen", search: "ramen restaurant", icon: "https://img.icons8.com/officel/160/000000/noodles.png", output: "Street food style ramen, nothing better!"},
+  {food: "Indian", search: "indian restaurant", icon: "https://img.icons8.com/cotton/160/000000/chili-pepper--v2.png", output: "Spicy, rich and flavourful. What's not to like about Indian?"}
 ];
 
 
@@ -25,20 +25,18 @@ function initMap() {
 
   // Map Init
   map = new google.maps.Map(document.querySelector('#map-container'), {
-    center: {lat: 52.551972, lng: -5.505043},
-    zoom: 11
+    center: {lat: 51.507338, lng: -0.127765},
+    zoom: 13
   });
   service = new google.maps.places.PlacesService(map);
 
-  let markers = [];
-  console.log(markers)
-  
+  let markers = [];  
   
   // Button Click Event
   button.onclick = () => {
     const numberforUse = Math.floor((Math.random() * 6));
     // Define query for use in map search
-    const searchQuery = {query: selection[numberforUse].food, radius: 2000, location: map.getCenter()};
+    const searchQuery = {query: selection[numberforUse].search, radius: 2000, location: map.getCenter()};
     
     // Update HTML
     heading.innerHTML = `<h3> ${selection[numberforUse].food} </h3>`;
@@ -60,6 +58,12 @@ function initMap() {
       });   
       }
 
+
+      // Create InfoWindow
+      var infowindow = new google.maps.InfoWindow({
+        content: ''
+      });
+
       // Create Markers
       function createMarker(place) {
         var marker = new google.maps.Marker({
@@ -68,11 +72,19 @@ function initMap() {
           title: place.name,
         });
         markers.push(marker);
+        marker.addListener('click', function() {
+          infowindow.setContent(marker.title)
+          infowindow.open(map, marker);
+        });
       };
 
-      // Create InfoWindow
-      var infowindow = new google.maps.InfoWindow();
-      google.maps.InfoWindow.open(map, marker)
+
+
+      markers.forEach(function(item){
+        item.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      })
   };
 
 

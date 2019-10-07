@@ -3,29 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon.png">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <title>Panic Picker</title>
 </head>
 <body>
 <div class="wrap">
+  <div class="content-contain">
   <div class="text">
     <h1>Panic Picker</h1>
-    <h3>Hungry?</h3>
-    <p>We have all been there, you're too tired to cook but can't decide what you want to eat.<br>
+    <h2>Hungry?</h2>
+    <p>Too tired to cook but can't decide what you'd like to eat?<br>
     Need something spark your imagination?<br>
-    Click below to get a suggestion and check the map to find your nearest fast food joint.  
+    Click below to get a suggestion and check the map to find some nearby fast food joints.  
   </div>
 
   <button class="btn" type="button">Click here for help!</button>
 
-  <div class="heading">
+  <div class="container">
+    <div class="heading">
+    </div>
+    <div class="icon">    
+    </div>
+    <div class="output">    
+    </div>
   </div>
-  <div class="icon">    
-  </div>
-  <div class="output">    
-  </div>
-  
+</div>
+
+<div class="arrow-contain">
+ <a href="#map-container"> <svg class="down-arrow" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 172 172" style=" fill:#000000;">
+    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+      <path d="M0,172v-172h172v172z" fill="none"></path><g fill="#9f72ff">
+        <path d="M42.43149,50.1839l-18.70913,18.70913l62.27764,62.27764l62.27765,-62.27764l-18.70913,-18.70913l-43.56851,43.56851z"></path>
+      </g>
+    </g>
+  </svg>
+</a>
+</div>
+
   <div id="map-container">
   </div>
 
