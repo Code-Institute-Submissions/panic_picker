@@ -16,6 +16,26 @@ const input = document.querySelector('#pac-input');
 
 
 
+// Request geolcation, set map center to location, handle geolocation errors
+function position(pos) {
+  let location = {
+    lat: pos.coords.latitude,
+    lng: pos.coords.longitude
+  };
+  map.setCenter(location);
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(position, error);
+} else {
+  // Browser doesn't support Geolocation
+  handleLocationError(false, infoWindow, map.getCenter());
+};
+
 
 
 let map; 
@@ -88,22 +108,3 @@ function initMap() {
   };
 
 
-// Request geolcation, set map center to location, handle geolocation errors
-  function position(pos) {
-    let location = {
-      lat: pos.coords.latitude,
-      lng: pos.coords.longitude
-    };
-    map.setCenter(location);
-  }
-
-  function error(err) {
-    console.warn(`ERROR(${err.code}): ${err.message}`);
-  }
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(position, error);
-  } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
-  };
