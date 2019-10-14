@@ -22,6 +22,7 @@ body {
 
 .content-contain {
   height: 95vh;
+  min-height: 650px;
 }
 
 .text {
