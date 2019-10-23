@@ -1,6 +1,6 @@
 
 <h1>Panic Picker</h1>
-Tool for helping users pcik what they would like fo dinner
+Tool for helping users pick what they would like fo dinner
 
 <h2>Summary</h2>
 <p>Users can click a button to receive a suggestion from the application on what style of food to have for dinner.
