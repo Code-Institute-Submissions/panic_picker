@@ -37,19 +37,19 @@ The space where icons are populated on button click is maintained on page load t
 ## Testing
 
 **Introduction**
-The application was tested to ensure it was fit for purpose.
+* The application was tested to ensure it was fit for purpose.
 **In Scope**
-The scope of this testing was the project design and functionality. 
+* The scope of this testing was the project design and functionality. 
 **Performance Testing**
-*Design/Layout
+* Design/Layout
 To ensure this project maintained it's desired layout the site was tested across multiple browsers (Chrome, Firefox, Microsoft Edge and Safari). 
 Using browser developer tools, multiple device sizes were also tested to ensure responsiveness.
 
-*Functionality
+* Functionality
 Functionality of this site was tested across a variety of browsers and mobile devices to ensure essential features worked as intended.  
 
 **Infastructure**
-The application, in it's simplest form, generates a random number on button click which is then used to select from a array of objects. These objects contain all the required infromation for the fast food selection. The object directs what display should be activated and also what keyword should be searched for on the map. 
+* The application, in it's simplest form, generates a random number on button click which is then used to select from a array of objects. These objects contain all the required infromation for the fast food selection. The object directs what display should be activated and also what keyword should be searched for on the map. 
 To ensure the browser memory is not overloaded causing potential crashes, map markers are cleared on each button click.
 
 ## Deployment
