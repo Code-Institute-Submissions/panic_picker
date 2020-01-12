@@ -37,10 +37,10 @@ The space where icons are populated on button click is maintained on page load t
 ## Testing
 
 **Introduction**\
-The application was tested to ensure it was fit for purpose.
-**In Scope**\
-The scope of this testing was the project design and functionality. 
-**Performance Testing**\
+The application was tested to ensure it was fit for purpose.\
+**In Scope**
+The scope of this testing was the project design and functionality.\
+**Performance Testing**
 * Design/Layout\
 To ensure this project maintained it's desired layout the site was tested across multiple browsers (Chrome, Firefox, Microsoft Edge and Safari). 
 Using browser developer tools, multiple device sizes were also tested to ensure responsiveness.
