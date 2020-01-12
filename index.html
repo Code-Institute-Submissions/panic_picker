@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,34 +16,34 @@
     <h2>Hungry?</h2>
     <p>Too tired to cook but can't decide what you'd like to eat?<br>
     Need something to spark your imagination?<br>
-    Allow the browser access to your location and click below to get a suggestion and check the map to find some nearby food joints.  
+    Allow the browser access to your location, click the button below to get a suggestion and then check the map to find some nearby food joints.  
   </div>
 
   <button class="btn" type="button">Click here for help!</button>
 
   <div class="container">
     <div class="heading">
-    </div>
-    <div class="icon">    
-    </div>
-    <div class="output">    
+      </div>
+      <div class="icon">    
+      </div>
+      <div class="output">    
+      </div>
     </div>
   </div>
-</div>
 
-<div class="arrow-contain">
- <a href="#map-container"> <svg class="down-arrow" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 172 172" style=" fill:#000000;">
-    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
-      <path d="M0,172v-172h172v172z" fill="none"></path><g fill="#9f72ff">
-        <path d="M42.43149,50.1839l-18.70913,18.70913l62.27764,62.27764l62.27765,-62.27764l-18.70913,-18.70913l-43.56851,43.56851z"></path>
+  <div class="arrow-contain">
+    <svg class="down-arrow" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 172 172" style=" fill:#000000;">
+      <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="normal" font-size="none"  style="mix-blend-mode: normal">
+        <path d="M0,172v-172h172v172z" fill="none"></path><g fill="#9f72ff">
+          <path d="M42.43149,50.1839l-18.70913,18.70913l62.27764,62.27764l62.27765,-62.27764l-18.70913,-18.70913l-43.56851,43.56851z"></path>
+        </g>
       </g>
-    </g>
-  </svg>
-</a>
-</div>
+    </svg>
+  </div>
+  <div class='error-text'></div>
 
   <div id="map-container">
-  </div>
+</div>
 
 </div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKnh6O9ICeCfNLCS93bi431zOH2IXJ6SU&libraries=places&callback=initMap"

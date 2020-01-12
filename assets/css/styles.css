@@ -21,7 +21,6 @@ body {
 /* Main content Styles */
 
 .content-contain {
-  height: 80vh;
   min-height: 650px;
 }
 
@@ -49,7 +48,7 @@ body {
   padding: 15px;
   font-size: 1rem;
   font-weight: bold;
-  background: #9f72ff;
+  background: #FFC972;
   outline: none;
   border: 1.5px solid black;
   border-radius: 5px;
@@ -84,12 +83,17 @@ body {
   text-align: center;
 }
 
+.error-text {
+  width: 300px;
+  margin: 0 auto 5px auto;
+}
+
 /* Nav Arrow */
 
 .arrow-contain {
  height: 5vh;
  display: block;
- margin-bottom: 15px;
+ margin-bottom: 5px;
 }
 
 .down-arrow {
@@ -98,10 +102,6 @@ body {
   display: inline-block;
   width: 40px;
   height: 40px;
-}
-
-.down-arrow a:hover {
-  cursor: hover;
 }
 
 /* Map */
