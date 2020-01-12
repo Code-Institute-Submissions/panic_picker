@@ -45,16 +45,21 @@ function initMap() {
 
   // Map Init
   map = new google.maps.Map(document.querySelector('#map-container'), {
-    center: {lat: 51.507338, lng: -0.127765},
+    center: {lat: 53.347365, lng: -6.259124},
     zoom: 13
   });
   service = new google.maps.places.PlacesService(map);
 
   let markers = [];  
-  
+
+  function randomNumber() {
+    return Math.floor((Math.random() * 6));
+  }
+
   // Button Click Event
   button.onclick = () => {
-    const numberforUse = Math.floor((Math.random() * 6));
+    
+    const numberforUse = randomNumber();
     // Define query for use in map search
     const searchQuery = {query: selection[numberforUse].search, radius: 2000, location: map.getCenter()};
     

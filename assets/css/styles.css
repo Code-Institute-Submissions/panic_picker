@@ -21,8 +21,8 @@ body {
 /* Main content Styles */
 
 .content-contain {
-  height: 95vh;
-  min-height: 700px;
+  height: 80vh;
+  min-height: 650px;
 }
 
 .text {
@@ -89,6 +89,7 @@ body {
 .arrow-contain {
  height: 5vh;
  display: block;
+ margin-bottom: 15px;
 }
 
 .down-arrow {
@@ -197,6 +198,7 @@ body {
 
 .content-contain {
   height: 55vh;
+  min-height: 700px;
 }
 
 .text h1 {
