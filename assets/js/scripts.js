@@ -109,6 +109,7 @@ function initMap() {
 //Init map on page load to prevent undecalred variable errors.
 function ready() {
   if (document.readyState != 'loading') {
+    position();
     initMap();
   } else {
     document.addEventListener('DOMContentLoaded', initMap());
