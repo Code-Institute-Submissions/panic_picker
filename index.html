@@ -3,12 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Prevent page cache -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon.png">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css">
 <title>Panic Picker</title>
 </head>
 <body>
+<!-- Page synopsis -->
 <div class="wrap">
   <div class="content-contain">
   <div class="text">
@@ -18,9 +24,10 @@
     Need something to spark your imagination?<br>
     Allow the browser access to your location, click the button below to get a suggestion and then check the map to find some nearby food joints.  
   </div>
-
+  <!-- button -->
   <button class="btn" type="button">Click here for help!</button>
 
+  <!-- Output for JS loaded elements -->
   <div class="container">
     <div class="heading">
       </div>
@@ -30,7 +37,7 @@
       </div>
     </div>
   </div>
-
+  <!-- Chevron for mobile navigation prompt -->
   <div class="arrow-contain">
     <svg class="down-arrow" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 172 172" style=" fill:#000000;">
       <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="normal" font-size="none"  style="mix-blend-mode: normal">
@@ -42,10 +49,12 @@
   </div>
   <div class='error-text'></div>
 
+  <!-- Map container -->
   <div id="map-container">
 </div>
 
 </div>
+<!-- Scripts -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKnh6O9ICeCfNLCS93bi431zOH2IXJ6SU&libraries=places&callback=initMap"
     async defer></script>
 <script src="assets/js/scripts.js"></script>
