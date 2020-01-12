@@ -38,7 +38,7 @@ The space where icons are populated on button click is maintained on page load t
 
 **Introduction**\
 The application was tested to ensure it was fit for purpose.\
-**In Scope**
+**In Scope** \
 The scope of this testing was the project design and functionality.\
 **Performance Testing**
 * Design/Layout\
